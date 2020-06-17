@@ -1,4 +1,4 @@
-package com.amos.util.date;
+package com.amos.util;
 
 import com.amos.util.id.IdUtils;
 
