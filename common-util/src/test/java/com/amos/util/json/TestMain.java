@@ -15,6 +15,30 @@ import java.util.Random;
 public class TestMain {
 
     public static void main(String[] args) {
+        base();
+        annotation();
+    }
+
+    private static void annotation() {
+        AnnotationBook annotationBook = new AnnotationBook();
+        annotationBook.setId("27861370671");
+        annotationBook.setIsbn("9787107324956");
+        annotationBook.setName("钢铁是怎样炼成的");
+        annotationBook.setFullName("钢铁是怎样炼成的");
+        annotationBook.setPublish("人民教育出版社");
+        annotationBook.setAuthor("奥斯特洛夫斯基");
+        annotationBook.setVersion("1");
+        annotationBook.setPackages("平装");
+        annotationBook.setCreateTime(LocalDateTime.now());
+
+        System.out.println(JSON.toJSONString(annotationBook));
+
+        String info = "{\"id\":\"27861370671\",\"name\":\"钢铁是怎样炼成的\",\"ISBN\":\"9787107324956\",\"full_name\":\"钢铁是怎样炼成的\",\"publish_info\":\"人民教育出版社\",\"author_info\":\"奥斯特洛夫斯基\",\"version_info\":\"1\",\"package\":\"平装\",\"create_time\":\"2020-06-18T11:45:28.2319315\"}";
+        annotationBook = JSON.parseObject(info, AnnotationBook.class);
+        System.out.println(JSON.toJSONString(annotationBook));
+    }
+
+    private static void base() {
         User user = getUser(8);
         String userJson = JSON.toJSONString(user);
         System.out.println(userJson);
