@@ -26,8 +26,6 @@
 ```
 
 2.2 访问仓库账号、TOKEN
-[申请token](https://github.com/settings/tokens/new)
-授权：repo、write:packages、read:packages、delete:packages
 
 ```xml
 <server>
@@ -36,6 +34,9 @@
     <password>2648477045d0a528ff2ad7a6fef61416b08a824b</password>
 </server>
 ```
+
+- [申请GithubToken](https://github.com/settings/tokens/new)
+- 授权：repo、write:packages、read:packages、delete:packages
 
 
 ## 3、建议配置
