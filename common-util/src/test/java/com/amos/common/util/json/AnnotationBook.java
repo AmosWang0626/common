@@ -1,4 +1,4 @@
-package com.amos.util.json;
+package com.amos.common.util.json;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
