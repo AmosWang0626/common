@@ -42,11 +42,11 @@ public final class GeneralResponse<T> implements IResponseCode {
     }
 
     public static <R> GeneralResponse<R> ofSuccess(R body) {
-        return new GeneralResponse<R>(GeneralResponseCode.SUCCESS, body);
+        return new GeneralResponse<>(GeneralResponseCode.SUCCESS, body);
     }
 
     public static <R> GeneralResponse<R> ofFailure() {
-        return new GeneralResponse<R>(GeneralResponseCode.FAILURE);
+        return new GeneralResponse<>(GeneralResponseCode.FAILURE);
     }
 
     /**
@@ -57,8 +57,10 @@ public final class GeneralResponse<T> implements IResponseCode {
      * @return GeneralResponse<R>
      */
     public static <R> GeneralResponse<R> ofErrorParam(String message) {
-        return new GeneralResponse<R>(GeneralResponseCode.ERROR_PARAM.getCode(),
-                String.format(GeneralResponseCode.ERROR_PARAM.getMessage(), message));
+        return new GeneralResponse<>(
+                GeneralResponseCode.ERROR_PARAM.getCode(),
+                String.format(GeneralResponseCode.ERROR_PARAM.getMessage(), message)
+        );
     }
 
     /**
@@ -68,7 +70,7 @@ public final class GeneralResponse<T> implements IResponseCode {
      * @return GeneralResponse<R>
      */
     public static <R> GeneralResponse<R> ofRequestIllegal() {
-        return new GeneralResponse<R>(GeneralResponseCode.REQUEST_ILLEGAL);
+        return new GeneralResponse<>(GeneralResponseCode.REQUEST_ILLEGAL);
     }
 
     /**
@@ -78,7 +80,7 @@ public final class GeneralResponse<T> implements IResponseCode {
      * @return GeneralResponse<R>
      */
     public static <R> GeneralResponse<R> ofOperationFrequently() {
-        return new GeneralResponse<R>(GeneralResponseCode.OPERATION_FREQUENTLY);
+        return new GeneralResponse<>(GeneralResponseCode.OPERATION_FREQUENTLY);
     }
 
 
