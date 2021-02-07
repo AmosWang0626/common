@@ -12,6 +12,7 @@
     <modules>
         <module>common-api</module>
         <module>common-util</module>
+        <module>common-dto</module>
     </modules>
 
     <properties>
