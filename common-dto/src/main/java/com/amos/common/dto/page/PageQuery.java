@@ -27,6 +27,9 @@ public class PageQuery extends Query {
     }
 
     public void setPage(int page) {
+        if (page < 1) {
+            page = 1;
+        }
         this.page = page;
     }
 
@@ -35,6 +38,9 @@ public class PageQuery extends Query {
     }
 
     public void setSize(int size) {
+        if (size < 1) {
+            size = DEFAULT_PAGE_SIZE;
+        }
         this.size = size;
     }
 }

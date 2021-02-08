@@ -1,5 +1,8 @@
 package com.amos.common.dto.response;
 
+import com.amos.common.dto.base.IResponse;
+import com.amos.common.dto.base.SystemResponseEnum;
+
 import java.util.Collection;
 
 /**
@@ -15,9 +18,28 @@ public class MultiResponse<T> extends Response {
     private Collection<T> data;
 
     public static <R> MultiResponse<R> ofSuccess(Collection<R> data) {
-        MultiResponse<R> response = new MultiResponse<R>();
+        MultiResponse<R> response = new MultiResponse<>();
         response.setSuccess(true);
+        response.setCode(SystemResponseEnum.SUCCESS.getCode());
+        response.setMessage(SystemResponseEnum.SUCCESS.getMessage());
         response.setData(data);
+
+        return response;
+    }
+
+    public static <R> MultiResponse<R> ofFail() {
+        return ofFail(SystemResponseEnum.FAIL);
+    }
+
+    public static <R> MultiResponse<R> ofFail(IResponse iResponse) {
+        return ofFail(iResponse.getCode(), iResponse.getMessage());
+    }
+
+    public static <R> MultiResponse<R> ofFail(String code, String message) {
+        MultiResponse<R> response = new MultiResponse<>();
+        response.setSuccess(true);
+        response.setCode(code);
+        response.setMessage(message);
 
         return response;
     }

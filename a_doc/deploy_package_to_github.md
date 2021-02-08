@@ -1,8 +1,9 @@
-# deploy maven package
-
+# Deploy GitHub
 
 ## 1、pom.xml 增加配置
+
 ```xml
+<!-- pom.xml -->
 <distributionManagement>
     <repository>
         <id>github</id>
@@ -12,12 +13,12 @@
 </distributionManagement>
 ```
 
-
 ## 2、setting.xml 增加配置
 
 2.1 配置仓库依赖
 
 ```xml
+<!-- setting.xml -->
 <repository>
     <id>github</id>
     <name>GitHub AmosWang0626 Apache Maven Packages</name>
@@ -28,26 +29,28 @@
 2.2 访问仓库账号、TOKEN
 
 ```xml
+<!-- github write permission -->
 <server>
     <id>github</id>
     <username>AmosWang0626</username>
-    <password>2648477045d0a528ff2ad7a6fef61416b08a824b</password>
+    <password>xxx</password>
 </server>
 ```
 
 - [申请GithubToken](https://github.com/settings/tokens/new)
-- 授权：repo、write:packages、read:packages、delete:packages
-
+- 授权：write:packages、read:packages、delete:packages
 
 ## 3、建议配置
+
 未稳定的版本，建议版本号上加上 `-SNAPSHOT`
+
 1. 可以多次deploy，不然的话同一版本提交会提示重复 `422 Unprocessable Entity`
 2. 使用者Reimport会自动拉取最新版本
-
 
 ---
 
 # 完整的 setting.xml 示例
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
@@ -94,7 +97,7 @@
         <server>
             <id>github</id>
             <username>AmosWang0626</username>
-            <password>2648477045d0a528ff2ad7a6fef61416b08a824b</password>
+            <password>xxx</password>
         </server>
     </servers>
 

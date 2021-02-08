@@ -1,5 +1,7 @@
 package com.amos.common.dto.page;
 
+import com.amos.common.dto.base.IResponse;
+import com.amos.common.dto.base.SystemResponseEnum;
 import com.amos.common.dto.response.Response;
 
 import java.util.Collection;
@@ -19,9 +21,28 @@ public class PageResponse<T> extends Response {
     private Collection<T> data;
 
     public static <R> PageResponse<R> ofSuccess(Collection<R> data) {
-        PageResponse<R> response = new PageResponse<R>();
+        PageResponse<R> response = new PageResponse<>();
         response.setSuccess(true);
+        response.setCode(SystemResponseEnum.SUCCESS.getCode());
+        response.setMessage(SystemResponseEnum.SUCCESS.getMessage());
         response.setData(data);
+
+        return response;
+    }
+
+    public static <R> PageResponse<R> ofFail() {
+        return ofFail(SystemResponseEnum.FAIL);
+    }
+
+    public static <R> PageResponse<R> ofFail(IResponse iResponse) {
+        return ofFail(iResponse.getCode(), iResponse.getMessage());
+    }
+
+    public static <R> PageResponse<R> ofFail(String code, String message) {
+        PageResponse<R> response = new PageResponse<>();
+        response.setSuccess(false);
+        response.setCode(code);
+        response.setMessage(message);
 
         return response;
     }
