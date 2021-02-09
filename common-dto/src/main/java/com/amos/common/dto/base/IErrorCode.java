@@ -7,7 +7,7 @@ package com.amos.common.dto.base;
  * @author amos.wang
  * @date 2021/2/8 16:43
  */
-public interface IResponse {
+public interface IErrorCode {
 
     /**
      * get error code

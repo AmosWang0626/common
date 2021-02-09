@@ -7,7 +7,7 @@ package com.amos.common.dto.base;
  * @author amos.wang
  * @date 2021/2/8 16:45
  */
-public enum SystemResponseEnum implements IResponse {
+public enum SystemCodeEnum implements IErrorCode {
 
     /***/
     SUCCESS("200", "success"),
@@ -18,7 +18,7 @@ public enum SystemResponseEnum implements IResponse {
 
     private final String message;
 
-    SystemResponseEnum(String code, String message) {
+    SystemCodeEnum(String code, String message) {
         this.code = code;
         this.message = message;
     }

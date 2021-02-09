@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 /**
  * DESCRIPTION: DateUtils
@@ -14,33 +15,21 @@ import java.time.format.DateTimeFormatter;
  */
 public class DateUtils {
 
-    /**
-     * yyyy-MM-dd HH:mm:ss
-     */
-    private static final DateTimeFormatter DATE_TIME_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-    /**
-     * yyyyMMddHHmmss
-     */
-    private static final DateTimeFormatter DATE_TIME_SIMPLE_FORMAT = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
-    /**
-     * yyyy-MM-dd
-     */
     private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    /**
-     * yyyyMMdd
-     */
     private static final DateTimeFormatter DATE_SIMPLE_FORMAT = DateTimeFormatter.ofPattern("yyyyMMdd");
+    private static final DateTimeFormatter DATE_TIME_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private static final DateTimeFormatter DATE_TIME_SIMPLE_FORMAT = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
 
 
     /**
-     * 获取当前日期开始时间
+     * begin of the day
      */
     public static LocalDateTime begin(LocalDateTime localDateTime) {
         return LocalDateTime.of(localDateTime.toLocalDate(), LocalTime.MIN);
     }
 
     /**
-     * 获取当前日期结束时间
+     * end of the day
      */
     public static LocalDateTime end(LocalDateTime localDateTime) {
         return LocalDateTime.of(localDateTime.toLocalDate(), LocalTime.MAX);
@@ -51,60 +40,69 @@ public class DateUtils {
      * yyyy-MM-dd
      */
     public static String getDate() {
-        return getDate(LocalDate.now(), true);
+        return getDate(LocalDate.now());
+    }
+
+    public static String getDate(LocalDate localDate) {
+        return Objects.isNull(localDate) ? null : getDate(localDate, true);
     }
 
     /**
      * yyyyMMdd
      */
     public static String getDateSimple() {
-        return getDate(LocalDate.now(), false);
+        return getDateSimple(LocalDate.now());
+    }
+
+    public static String getDateSimple(LocalDate localDate) {
+        return Objects.isNull(localDate) ? null : getDate(localDate, false);
     }
 
     /**
      * yyyy-MM-dd HH:mm:ss
      */
     public static String getDateTime() {
-        return getDateTime(LocalDateTime.now(), true);
+        return getDateTime(LocalDateTime.now());
+    }
+
+    public static String getDateTime(LocalDateTime localDateTime) {
+        return Objects.isNull(localDateTime) ? null : getDateTime(localDateTime, true);
     }
 
     /**
      * yyyyMMddHHmmss
      */
     public static String getDateTimeSimple() {
-        return getDateTime(LocalDateTime.now(), false);
+        return getDateTimeSimple(LocalDateTime.now());
+    }
+
+    public static String getDateTimeSimple(LocalDateTime localDateTime) {
+        return Objects.isNull(localDateTime) ? null : getDateTime(localDateTime, false);
     }
 
 
     /**
-     * 格式化日期加时间 by LocalDate
+     * format by LocalDate
      *
      * @param localDate LocalDate
-     * @param delimiter 是否带分隔符
+     * @param delimiter have delimiter ?
      *                  delimiter == true ? 'yyyy-MM-dd' : 'yyyyMMdd'
-     * @return 格式化后的日期
+     * @return Formatted date
      */
     private static String getDate(LocalDate localDate, boolean delimiter) {
-        if (delimiter) {
-            return localDate.format(DATE_FORMAT);
-        }
-        return localDate.format(DATE_SIMPLE_FORMAT);
+        return delimiter ? localDate.format(DATE_FORMAT) : localDate.format(DATE_SIMPLE_FORMAT);
     }
 
     /**
-     * 格式化日期加时间 by LocalDateTime
+     * format by LocalDateTime
      *
      * @param localDateTime LocalDateTime
-     * @param delimiter     是否带分隔符
+     * @param delimiter     have delimiter ?
      *                      delimiter == true ? 'yyyy-MM-dd HH:mm:ss' : 'yyyyMMddHHmmss'
-     * @return 格式化后的日期
+     * @return Formatted datetime
      */
     private static String getDateTime(LocalDateTime localDateTime, boolean delimiter) {
-        if (delimiter) {
-            return localDateTime.format(DATE_TIME_FORMAT);
-        }
-        return localDateTime.format(DATE_TIME_SIMPLE_FORMAT);
+        return delimiter ? localDateTime.format(DATE_TIME_FORMAT) : localDateTime.format(DATE_TIME_SIMPLE_FORMAT);
     }
-
 
 }

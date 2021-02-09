@@ -1,7 +1,7 @@
 package com.amos.common.dto.response;
 
-import com.amos.common.dto.base.IResponse;
-import com.amos.common.dto.base.SystemResponseEnum;
+import com.amos.common.dto.base.IErrorCode;
+import com.amos.common.dto.base.SystemCodeEnum;
 
 /**
  * DESCRIPTION: Single Response
@@ -15,22 +15,26 @@ public class SingleResponse<T> extends Response {
 
     private T data;
 
+    public static <R> SingleResponse<R> ofSuccess() {
+        return ofSuccess(null);
+    }
+
     public static <R> SingleResponse<R> ofSuccess(R data) {
         SingleResponse<R> response = new SingleResponse<>();
         response.setSuccess(true);
-        response.setCode(SystemResponseEnum.SUCCESS.getCode());
-        response.setMessage(SystemResponseEnum.SUCCESS.getMessage());
+        response.setCode(SystemCodeEnum.SUCCESS.getCode());
+        response.setMessage(SystemCodeEnum.SUCCESS.getMessage());
         response.setData(data);
 
         return response;
     }
 
     public static <R> SingleResponse<R> ofFail() {
-        return ofFail(SystemResponseEnum.FAIL);
+        return ofFail(SystemCodeEnum.FAIL);
     }
 
-    public static <R> SingleResponse<R> ofFail(IResponse iResponse) {
-        return ofFail(iResponse.getCode(), iResponse.getMessage());
+    public static <R> SingleResponse<R> ofFail(IErrorCode iErrorCode) {
+        return ofFail(iErrorCode.getCode(), iErrorCode.getMessage());
     }
 
     public static <R> SingleResponse<R> ofFail(String code, String message) {
