@@ -3,7 +3,9 @@ package com.amos.common.util.date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -19,7 +21,7 @@ public class DateUtils {
     private static final DateTimeFormatter DATE_SIMPLE_FORMAT = DateTimeFormatter.ofPattern("yyyyMMdd");
     private static final DateTimeFormatter DATE_TIME_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private static final DateTimeFormatter DATE_TIME_SIMPLE_FORMAT = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
-
+    private static final ZoneId ZONE_ID = ZoneId.systemDefault();
 
     /**
      * begin of the day
@@ -67,6 +69,10 @@ public class DateUtils {
 
     public static String getDateTime(LocalDateTime localDateTime) {
         return Objects.isNull(localDateTime) ? null : getDateTime(localDateTime, true);
+    }
+
+    public static String getDateTime(Date date) {
+        return Objects.isNull(date) ? null : getDateTime(date.toInstant().atZone(ZONE_ID).toLocalDateTime());
     }
 
     /**
