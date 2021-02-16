@@ -26,6 +26,8 @@
 
 ## 快速开始
 
+> 如果你也想用 github 作自己的 maven 仓库，请参考 [deploy package to github](a_doc/deploy_package_to_github.md)
+
 ### 1、添加依赖（按需依赖）
 
 ```xml
@@ -66,9 +68,17 @@
 <server>
     <id>github</id>
     <username>AmosWang0626</username>
-    <password>ff15825cfd4dbb0643240cc4fbf2e8f66c58ac20</password>
+    <password>de8fd5ae29835464b24cbb1ebb51a86964749082</password>
 </server>
 ```
+
+2.3 下载对应jar
+
+`mvn install`
+
+- 如果下载不下来，请检查 setting.xml 配置，可参考 [settings.xml](a_doc/settings.xml)
+
+- 如果提示 401 Unauthorized，可能是 2.2 中配置的密码错误，请提 issue，看到后会第一时间处理
 
 ---
 备注：
