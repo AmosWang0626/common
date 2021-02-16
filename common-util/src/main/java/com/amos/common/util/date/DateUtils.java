@@ -1,9 +1,6 @@
 package com.amos.common.util.date;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.ZoneId;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Objects;
@@ -21,6 +18,7 @@ public class DateUtils {
     private static final DateTimeFormatter DATE_SIMPLE_FORMAT = DateTimeFormatter.ofPattern("yyyyMMdd");
     private static final DateTimeFormatter DATE_TIME_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private static final DateTimeFormatter DATE_TIME_SIMPLE_FORMAT = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+    private static final ZoneOffset ZONE_OFFSET = ZoneOffset.of("+8");
     private static final ZoneId ZONE_ID = ZoneId.systemDefault();
 
     /**
@@ -109,6 +107,35 @@ public class DateUtils {
      */
     private static String getDateTime(LocalDateTime localDateTime, boolean delimiter) {
         return delimiter ? localDateTime.format(DATE_TIME_FORMAT) : localDateTime.format(DATE_TIME_SIMPLE_FORMAT);
+    }
+
+    /**
+     * Get the current time seconds
+     *
+     * @return current time seconds
+     */
+    public static long getTimeSecond() {
+        return Instant.now().getEpochSecond();
+    }
+
+    /**
+     * LocalDateTime to timeMillis
+     *
+     * @param localDateTime LocalDateTime
+     * @return time millis
+     */
+    public static Long toTimeMillis(LocalDateTime localDateTime) {
+        return localDateTime.toInstant(ZONE_OFFSET).toEpochMilli();
+    }
+
+    /**
+     * timeMillis to LocalDateTime
+     *
+     * @param timeMillis time millis
+     * @return LocalDateTime
+     */
+    public static LocalDateTime toLocalDateTime(Long timeMillis) {
+        return Instant.ofEpochMilli(timeMillis).atOffset(ZONE_OFFSET).toLocalDateTime();
     }
 
 }
