@@ -41,11 +41,15 @@ public class MultiResponse<T> extends Response {
 
     public static <R> MultiResponse<R> ofFail(String code, String message) {
         MultiResponse<R> response = new MultiResponse<>();
-        response.setSuccess(true);
+        response.setSuccess(false);
         response.setCode(code);
         response.setMessage(message);
 
         return response;
+    }
+
+    public static <R> MultiResponse<R> ofErrorParam(String message) {
+        return ofFail(SystemCodeEnum.ERROR_PARAM.getCode(), message);
     }
 
     public Collection<T> getData() {

@@ -51,6 +51,10 @@ public class PageResponse<T> extends Response {
         return response;
     }
 
+    public static <R> PageResponse<R> ofErrorParam(String message) {
+        return ofFail(SystemCodeEnum.ERROR_PARAM.getCode(), message);
+    }
+
     public int getTotal() {
         return total;
     }

@@ -12,7 +12,8 @@ public enum SystemCodeEnum implements IErrorCode {
     /***/
     SUCCESS("200", "success"),
     FAIL("500", "fail"),
-    FORBIDDEN("403", "fail");
+    ERROR_PARAM("400", "error param"),
+    FORBIDDEN("403", "forbidden");
 
     private final String code;
 

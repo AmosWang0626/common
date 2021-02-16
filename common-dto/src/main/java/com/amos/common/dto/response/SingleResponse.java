@@ -46,6 +46,10 @@ public class SingleResponse<T> extends Response {
         return response;
     }
 
+    public static <R> SingleResponse<R> ofErrorParam(String message) {
+        return ofFail(SystemCodeEnum.ERROR_PARAM.getCode(), message);
+    }
+
     public T getData() {
         return data;
     }
