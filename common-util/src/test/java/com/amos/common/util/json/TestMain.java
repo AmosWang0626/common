@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * DESCRIPTION: Json 测试
+ * Json 测试
  *
  * @author <a href="mailto:daoyuan0626@gmail.com">amos.wang</a>
  * @date 2020/6/17

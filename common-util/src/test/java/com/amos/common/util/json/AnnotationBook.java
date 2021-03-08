@@ -5,8 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.LocalDateTime;
 
 /**
- * 模块名称: common
- * 模块描述: AnnotationBook
+ * AnnotationBook
  *
  * @author amos.wang
  * @date 2020/6/18 11:21

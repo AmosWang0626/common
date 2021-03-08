@@ -6,7 +6,7 @@ import com.amos.common.dto.base.SystemCodeEnum;
 import java.util.Collection;
 
 /**
- * DESCRIPTION: Multiple Response
+ * Multiple Response
  *
  * @author <a href="mailto:daoyuan0626@gmail.com">amos.wang</a>
  * @date 2021/2/7

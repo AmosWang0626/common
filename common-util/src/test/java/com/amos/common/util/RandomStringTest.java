@@ -3,7 +3,7 @@ package com.amos.common.util;
 import com.amos.common.util.random.RandomStringUtils;
 
 /**
- * DESCRIPTION: RandomStringTest
+ * RandomStringTest
  *
  * @author <a href="mailto:daoyuan0626@gmail.com">amos.wang</a>
  * @date 2020/5/31

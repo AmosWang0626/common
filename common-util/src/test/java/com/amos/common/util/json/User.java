@@ -3,7 +3,7 @@ package com.amos.common.util.json;
 import java.util.List;
 
 /**
- * DESCRIPTION: 用户
+ * 用户
  *
  * @author <a href="mailto:daoyuan0626@gmail.com">amos.wang</a>
  * @date 2020/6/17

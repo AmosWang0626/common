@@ -1,8 +1,7 @@
 package com.amos.common.dto.base;
 
 /**
- * 模块名称: common
- * 模块描述: IResponse
+ * IErrorCode
  *
  * @author amos.wang
  * @date 2021/2/8 16:43

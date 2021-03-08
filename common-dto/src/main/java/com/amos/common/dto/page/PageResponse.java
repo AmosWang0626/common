@@ -7,7 +7,7 @@ import com.amos.common.dto.response.Response;
 import java.util.Collection;
 
 /**
- * DESCRIPTION: Page Response
+ * Page Response
  *
  * @author <a href="mailto:daoyuan0626@gmail.com">amos.wang</a>
  * @date 2021/2/7

@@ -1,7 +1,7 @@
 package com.amos.common.util.crypto;
 
 /**
- * DESCRIPTION: CryptoConstant
+ * CryptoConstant
  *
  * @author <a href="mailto:amos.wang@xiaoi.com">amos.wang</a>
  * @date 2/18/2020

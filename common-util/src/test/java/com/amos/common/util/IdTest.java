@@ -3,7 +3,7 @@ package com.amos.common.util;
 import com.amos.common.util.id.IdUtils;
 
 /**
- * DESCRIPTION: IdTest
+ * IdTest
  *
  * @author <a href="mailto:daoyuan0626@gmail.com">amos.wang</a>
  * @date 2020/5/31

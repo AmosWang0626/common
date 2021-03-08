@@ -13,7 +13,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * DESCRIPTION: 参考阿里 fastjson API，使用 jackson 实现
+ * 参考阿里 fastjson API，使用 jackson 实现
  *
  * @author <a href="mailto:daoyuan0626@gmail.com">amos.wang</a>
  * @date 2020/6/17

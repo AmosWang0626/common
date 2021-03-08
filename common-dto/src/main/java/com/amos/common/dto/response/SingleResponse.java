@@ -4,7 +4,7 @@ import com.amos.common.dto.base.IErrorCode;
 import com.amos.common.dto.base.SystemCodeEnum;
 
 /**
- * DESCRIPTION: Single Response
+ * Single Response
  *
  * @author <a href="mailto:daoyuan0626@gmail.com">amos.wang</a>
  * @date 2021/2/7

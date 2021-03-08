@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
- * DESCRIPTION: 用户地址
+ * 用户地址
  *
  * @author <a href="mailto:daoyuan0626@gmail.com">amos.wang</a>
  * @date 2020/6/17

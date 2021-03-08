@@ -3,7 +3,7 @@ package com.amos.common.util.id;
 import java.util.UUID;
 
 /**
- * DESCRIPTION: IdUtils
+ * IdUtils
  *
  * @author <a href="mailto:daoyuan0626@gmail.com">amos.wang</a>
  * @date 2020/5/31

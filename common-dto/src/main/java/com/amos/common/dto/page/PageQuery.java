@@ -3,7 +3,7 @@ package com.amos.common.dto.page;
 import com.amos.common.dto.base.Query;
 
 /**
- * DESCRIPTION: Page Query
+ * Page Query
  *
  * @author <a href="mailto:daoyuan0626@gmail.com">amos.wang</a>
  * @date 2021/2/7

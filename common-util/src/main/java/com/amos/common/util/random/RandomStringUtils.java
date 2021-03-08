@@ -3,7 +3,7 @@ package com.amos.common.util.random;
 import java.util.Random;
 
 /**
- * DESCRIPTION: SpringBeanUtils
+ * SpringBeanUtils
  *
  * @author <a href="mailto:daoyuan0626@gmail.com">amos.wang</a>
  * @date 2020/5/31
